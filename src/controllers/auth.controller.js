@@ -24,8 +24,8 @@ export const register = async (req, res) => {
         }); //guardamos el modelo en mongodb
         const token = await createAccessToken({id: userSaved._id});
         res.cookie('token', token, {
-            sameSite: 'none',
-            secure: true
+            httpOnly: true,
+            sameSite: 'lax',
         });
 
         res.send({
