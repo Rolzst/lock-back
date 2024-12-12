@@ -10,7 +10,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:5174'],
+    origin: ['https://lookbox.onrender.com/', 'http://localhost:5173', process.env.BASE_URL],
     credentials: true
 }));
 app.use(morgan('dev'));
